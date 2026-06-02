@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products — GreenLeaf Organics</title>
+  <meta name="description" content="Browse GreenLeaf Organics' full range of certified organic vegetables, fruits, dairy, eggs, grains and pulses.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: { 50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d',800:'#166534',900:'#14532d' },
+            leaf:'#2D7D46', dark:'#1a2e1a',
+          },
+          fontFamily: { sans: ['Inter','sans-serif'] },
+          borderRadius: { '4xl':'2rem','5xl':'2.5rem' },
+          boxShadow: { 'glow':'0 0 20px rgba(45,125,70,0.3)' },
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans bg-white text-gray-900 antialiased">
+
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-green-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="text-2xl">🌿</span>
+        <div>
+          <div class="font-bold text-green-800 text-lg leading-none">GreenLeaf Organics</div>
+          <div class="text-xs text-green-600 tracking-widest uppercase">Fresh. Natural. Local.</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-1">
+        <a href="index.html"    class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">Home</a>
+        <a href="products.html" class="bg-green-600 text-white rounded-full px-4 py-2 text-sm font-medium">Products</a>
+        <a href="about.html"    class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">About</a>
+        <a href="gallery.html"  class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">Gallery</a>
+        <a href="contact.html"  class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">Contact</a>
+      </nav>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-xl text-green-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-3 border-t border-green-100 flex flex-col gap-1 pt-2">
+      <a href="index.html"    class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">Home</a>
+      <a href="products.html" class="block bg-green-600 text-white rounded-xl px-4 py-2 text-sm font-medium">Products</a>
+      <a href="about.html"    class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">About</a>
+      <a href="gallery.html"  class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">Gallery</a>
+      <a href="contact.html"  class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">Contact</a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="hero-gradient-sm py-16 text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 70% 50%,white 1px,transparent 1px);background-size:32px 32px;"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4">
+      <div class="text-5xl mb-3">🛒</div>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-3">Our Products</h1>
+      <p class="text-green-100 text-lg">Certified organic goodness — straight from Guyana's finest farms to your table.</p>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <div class="bg-green-50 border-b border-green-100 py-4 sticky top-16 z-40">
+    <div class="max-w-6xl mx-auto px-4 flex flex-wrap gap-2 justify-center">
+      <button class="filter-tab active rounded-full px-5 py-2 text-sm font-semibold bg-green-100 text-green-800 transition-all" data-filter="all">All Products</button>
+      <button class="filter-tab rounded-full px-5 py-2 text-sm font-semibold bg-white text-green-700 border border-green-200 hover:bg-green-50 transition-all" data-filter="vegetables">🥦 Vegetables</button>
+      <button class="filter-tab rounded-full px-5 py-2 text-sm font-semibold bg-white text-green-700 border border-green-200 hover:bg-green-50 transition-all" data-filter="fruits">🍍 Fruits</button>
+      <button class="filter-tab rounded-full px-5 py-2 text-sm font-semibold bg-white text-green-700 border border-green-200 hover:bg-green-50 transition-all" data-filter="dairy">🥛 Dairy &amp; Eggs</button>
+      <button class="filter-tab rounded-full px-5 py-2 text-sm font-semibold bg-white text-green-700 border border-green-200 hover:bg-green-50 transition-all" data-filter="grains">🌾 Grains &amp; Pulses</button>
+    </div>
+  </div>
+
+  <main class="max-w-6xl mx-auto px-4 py-12">
+
+    <!-- VEGETABLES -->
+    <div id="section-vegetables" class="mb-12">
+      <div class="flex items-center gap-3 mb-6 reveal">
+        <span class="bg-green-100 text-green-800 rounded-full px-4 py-1.5 text-sm font-bold">🥦 Vegetables</span>
+        <div class="flex-1 h-px bg-green-100"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-1" data-category="vegetables">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=600&auto=format&fit=crop&q=80" alt="Fresh organic pak choi leaves" loading="lazy">
+            <span class="photo-emoji">🥬</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Pak Choi</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$350/bunch</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Tender, crisp leaves grown on East Coast Demerara. Excellent for stir-fries and soups.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-2" data-category="vegetables">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1560252030-9fc63cb78dac?w=600&auto=format&fit=crop&q=80" alt="Bundle of fresh long beans (bora)" loading="lazy">
+            <span class="photo-emoji">🥦</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Bora (Long Beans)</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$200/bundle</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Classic Guyanese bora — freshly picked, tender and full of flavour. Great for curry.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-3" data-category="vegetables">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=600&auto=format&fit=crop&q=80" alt="Fresh ears of sweet corn" loading="lazy">
+            <span class="photo-emoji">🌽</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Sweet Corn</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$150/ear</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Sun-ripened organic sweet corn from Berbice — naturally sweet, no added chemicals.</p>
+            <span class="badge-amber text-xs font-semibold rounded-full px-3 py-1 inline-block">&#9675; Limited Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-1" data-category="vegetables">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=600&auto=format&fit=crop&q=80" alt="Ripe red heritage tomatoes" loading="lazy">
+            <span class="photo-emoji">🍅</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Heritage Tomatoes</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$500/kg</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Deep-red heirloom tomatoes with rich flavour — grown pesticide-free in Berbice.</p>
+            <span class="badge-amber text-xs font-semibold rounded-full px-3 py-1 inline-block">&#9675; Limited Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-2" data-category="vegetables">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?w=600&auto=format&fit=crop&q=80" alt="Fresh red onions" loading="lazy">
+            <span class="photo-emoji">🧅</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Red Onions</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$300/kg</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Locally grown red onions — staple of Guyanese cooking, organic and full-flavoured.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-3" data-category="vegetables">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1525607551316-4a8e16d1f9ba?w=600&auto=format&fit=crop&q=80" alt="Colourful organic sweet bell peppers" loading="lazy">
+            <span class="photo-emoji">🫑</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Sweet Peppers</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$400/kg</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Colourful organic sweet peppers — yellow, red and green — grown in the Corentyne.</p>
+            <span class="badge-red text-xs font-semibold rounded-full px-3 py-1 inline-block">&#8722; Out of Season</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FRUITS -->
+    <div id="section-fruits" class="mb-12">
+      <div class="flex items-center gap-3 mb-6 reveal">
+        <span class="bg-orange-100 text-orange-800 rounded-full px-4 py-1.5 text-sm font-bold">🍍 Fruits</span>
+        <div class="flex-1 h-px bg-orange-100"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-1" data-category="fruits">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=600&auto=format&fit=crop&q=80" alt="Ripe golden pineapple" loading="lazy">
+            <span class="photo-emoji">🍍</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Pineapple</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$600/each</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Juicy golden organic pineapples from Essequibo — sweet with no pesticide residue.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-2" data-category="fruits">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?w=600&auto=format&fit=crop&q=80" alt="Ripe yellow Julie mangoes" loading="lazy">
+            <span class="photo-emoji">🥭</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Julie Mangoes</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$800/kg</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Prized Julie mangoes from Berbice — fragrant, fibre-free, ripened naturally on the tree.</p>
+            <span class="badge-amber text-xs font-semibold rounded-full px-3 py-1 inline-block">&#9675; Limited Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-3" data-category="fruits">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1582248787745-e2ee014c16d9?w=600&auto=format&fit=crop&q=80" alt="Green spiky soursop fruit" loading="lazy">
+            <span class="photo-emoji">🍈</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Soursop</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$1,000/each</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Creamy, tart soursop — great for juice or ice cream. Organically grown in Demerara.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-1" data-category="fruits">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=600&auto=format&fit=crop&q=80" alt="Bunch of green plantains" loading="lazy">
+            <span class="photo-emoji">🍌</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Plantains</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$250/hand</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Starchy, versatile organic plantains — ideal for frying, roasting or adding to pepper pot.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-2" data-category="fruits">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?w=600&auto=format&fit=crop&q=80" alt="Mixed citrus fruit including oranges and limes" loading="lazy">
+            <span class="photo-emoji">🍊</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Citrus Mix</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$450/bag</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Mixed organic citrus — limes, oranges and grapefruit — from our Essequibo partner farm.</p>
+            <span class="badge-red text-xs font-semibold rounded-full px-3 py-1 inline-block">&#8722; Out of Season</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DAIRY & EGGS -->
+    <div id="section-dairy" class="mb-12">
+      <div class="flex items-center gap-3 mb-6 reveal">
+        <span class="bg-yellow-100 text-yellow-800 rounded-full px-4 py-1.5 text-sm font-bold">🥛 Dairy &amp; Eggs</span>
+        <div class="flex-1 h-px bg-yellow-100"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-1" data-category="dairy">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=600&auto=format&fit=crop&q=80" alt="Carton of fresh free-range eggs" loading="lazy">
+            <span class="photo-emoji">🥚</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Free-Range Eggs</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$1,200/doz</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Daily-collected from free-roaming hens at West Coast Farm. Deep yellow yolks, exceptional taste.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-2" data-category="dairy">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?w=600&auto=format&fit=crop&q=80" alt="Glass of fresh raw goat milk" loading="lazy">
+            <span class="photo-emoji">🥛</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Raw Goat Milk</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$900/litre</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Creamy, naturally homogenised goat milk — rich in nutrients and easier to digest.</p>
+            <span class="badge-amber text-xs font-semibold rounded-full px-3 py-1 inline-block">&#9675; Limited Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-3" data-category="dairy">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?w=600&auto=format&fit=crop&q=80" alt="Soft white cheese on a board" loading="lazy">
+            <span class="photo-emoji">🧀</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Soft White Cheese</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$1,500/250g</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Handmade organic soft cheese from local dairy — perfect on cassava bread or in salads.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRAINS & PULSES -->
+    <div id="section-grains" class="mb-12">
+      <div class="flex items-center gap-3 mb-6 reveal">
+        <span class="bg-amber-100 text-amber-800 rounded-full px-4 py-1.5 text-sm font-bold">🌾 Grains &amp; Pulses</span>
+        <div class="flex-1 h-px bg-amber-100"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-1" data-category="grains">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&auto=format&fit=crop&q=80" alt="Bowl of wholegrain brown rice" loading="lazy">
+            <span class="photo-emoji">🌾</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Brown Rice</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$700/kg</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Organic brown rice from the Rupununi — wholegrain, nutty flavour, loaded with fibre.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-2" data-category="grains">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1515543904379-3d757afe72e4?w=600&auto=format&fit=crop&q=80" alt="Pile of dried black-eye peas" loading="lazy">
+            <span class="photo-emoji">🫘</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Black-Eye Peas</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$450/500g</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Classic Guyanese black-eye peas — organic, high-protein, perfect for cook-up rice.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-3" data-category="grains">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1596564823703-d28706a620e8?w=600&auto=format&fit=crop&q=80" alt="Yellow split peas in a bowl" loading="lazy">
+            <span class="photo-emoji">🌿</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Split Peas</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$400/500g</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Organic yellow split peas — the base of Guyana's beloved dhal and peas soup dishes.</p>
+            <span class="badge-green text-xs font-semibold rounded-full px-3 py-1 inline-block">&#10003; In Stock</span>
+          </div>
+        </div>
+        <div class="product-card-item card-hover bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 overflow-hidden reveal reveal-delay-1" data-category="grains">
+          <div class="product-photo compact">
+            <img src="https://images.unsplash.com/photo-1610725664285-7c57e6eeac3f?w=600&auto=format&fit=crop&q=80" alt="Bowl of cassava flour" loading="lazy">
+            <span class="photo-emoji">🌰</span>
+          </div>
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-2 mb-2">
+              <h3 class="font-bold text-green-900">Cassava Flour</h3>
+              <span class="bg-green-600 text-white text-xs font-bold rounded-full px-2.5 py-0.5 whitespace-nowrap">GY$550/500g</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-3">Stone-ground organic cassava flour — gluten-free, traditionally made in the Amerindian style.</p>
+            <span class="badge-amber text-xs font-semibold rounded-full px-3 py-1 inline-block">&#9675; Limited Stock</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDER BANNER -->
+    <div class="bg-green-50 rounded-2xl p-6 border border-green-200 flex flex-col md:flex-row items-center justify-between gap-4 reveal">
+      <div>
+        <h3 class="font-bold text-green-900 text-lg mb-1">Ready to Order?</h3>
+        <p class="text-gray-600 text-sm">Call us, visit the shop or use our contact form. Delivery every Tuesday &amp; Friday across Georgetown.</p>
+      </div>
+      <a href="contact.html" class="flex-shrink-0 bg-green-600 hover:bg-green-700 text-white rounded-full px-7 py-3 font-bold transition-all duration-300 hover:-translate-y-1">
+        Place an Order
+      </a>
+    </div>
+  </main>
+
+  <footer class="bg-green-900 text-green-100 mt-20">
+    <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3"><span class="text-2xl">🌿</span><span class="font-bold text-white text-lg">GreenLeaf Organics</span></div>
+        <p class="text-green-300 text-sm leading-relaxed">Georgetown's premier certified organic food shop. Locally sourced, freshly delivered.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-green-300">
+          <li><a href="index.html"    class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
+          <li><a href="about.html"    class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="gallery.html"  class="hover:text-white transition-colors">Gallery</a></li>
+          <li><a href="contact.html"  class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Visit Us</h4>
+        <div class="text-sm text-green-300 space-y-1">
+          <p>42 Regent Street, Georgetown</p>
+          <p>Tel: +592 225-0001</p>
+          <p>Mon&ndash;Sat: 7am &ndash; 6pm</p>
+          <p class="mt-2">🚚 Delivery: Tue &amp; Fri</p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-green-800 text-center py-4 text-sm text-green-400">
+      &copy; 2026 GreenLeaf Organics | F3T2 12 &mdash; Computing: Authoring a Website | 252IFCBR0596
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => io.observe(el));
+
+    const tabs = document.querySelectorAll('.filter-tab');
+    const cards = document.querySelectorAll('.product-card-item');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.remove('active');
+          t.style.background = '';
+          t.style.color = '';
+        });
+        tab.classList.add('active');
+        const filter = tab.dataset.filter;
+        cards.forEach(card => {
+          card.classList.toggle('hidden', filter !== 'all' && card.dataset.category !== filter);
+        });
+        ['vegetables','fruits','dairy','grains'].forEach(cat => {
+          const sec = document.getElementById('section-' + cat);
+          if (sec) sec.style.display = (filter === 'all' || filter === cat) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+</body>
+</html>

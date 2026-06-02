@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — GreenLeaf Organics</title>
+  <meta name="description" content="Learn the story of GreenLeaf Organics — Georgetown's premier organic food shop, founded in 2018 to connect Guyanese families with local organic farms.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:{50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d',800:'#166534',900:'#14532d'},
+            leaf:'#2D7D46',dark:'#1a2e1a',
+          },
+          fontFamily:{sans:['Inter','sans-serif']},
+          borderRadius:{'4xl':'2rem','5xl':'2.5rem'},
+          boxShadow:{'glow':'0 0 20px rgba(45,125,70,0.3)'},
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans bg-white text-gray-900 antialiased">
+
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-green-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="text-2xl">🌿</span>
+        <div>
+          <div class="font-bold text-green-800 text-lg leading-none">GreenLeaf Organics</div>
+          <div class="text-xs text-green-600 tracking-widest uppercase">Fresh. Natural. Local.</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-1">
+        <a href="index.html"    class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">Home</a>
+        <a href="products.html" class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">Products</a>
+        <a href="about.html"    class="bg-green-600 text-white rounded-full px-4 py-2 text-sm font-medium">About</a>
+        <a href="gallery.html"  class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">Gallery</a>
+        <a href="contact.html"  class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">Contact</a>
+      </nav>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-xl text-green-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-3 border-t border-green-100 flex flex-col gap-1 pt-2">
+      <a href="index.html"    class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">Home</a>
+      <a href="products.html" class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">Products</a>
+      <a href="about.html"    class="block bg-green-600 text-white rounded-xl px-4 py-2 text-sm font-medium">About</a>
+      <a href="gallery.html"  class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">Gallery</a>
+      <a href="contact.html"  class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">Contact</a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="hero-gradient-sm py-16 text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 30% 50%,white 1px,transparent 1px);background-size:28px 28px;"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4">
+      <div class="text-5xl mb-3">🌱</div>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-3">About GreenLeaf</h1>
+      <p class="text-green-100 text-lg">Our story, our values, our people — rooted in Guyana's land.</p>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-4 py-16">
+
+    <!-- OUR STORY -->
+    <section class="mb-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <!-- Text -->
+        <div class="reveal">
+          <span class="inline-block bg-green-100 text-green-700 rounded-full px-4 py-1 text-sm font-semibold mb-4">Our Story</span>
+          <h2 class="text-3xl font-extrabold text-green-900 mb-5">From a Small Garden to Georgetown's Finest Organic Shop</h2>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            GreenLeaf Organics was born in 2018 from a simple belief: that every family in Georgetown deserves access to genuinely fresh, chemical-free food. Our founder, Maya Persaud, grew up on her grandmother's farm in the Demerara region, where the soil was rich and the food tasted like it should.
+          </p>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            When Maya moved to Georgetown, she noticed that organic, locally grown produce was nearly impossible to find. Supermarket shelves were stocked with imported, pesticide-treated food — often days old by the time it reached customers. She decided to change that.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Today, GreenLeaf Organics partners with eight certified organic farms across Demerara, Berbice and Essequibo. We bring their harvest directly to our Regent Street shop and deliver twice a week to homes across Georgetown — always fresh, always honest, always organic.
+          </p>
+        </div>
+        <!-- Illustration card -->
+        <div class="reveal reveal-delay-2">
+          <div class="rounded-4xl p-10 text-center text-white" style="background:linear-gradient(135deg,#14532d,#22c55e);">
+            <div class="text-8xl mb-6">🌿</div>
+            <div class="text-5xl mb-2 font-extrabold">2018</div>
+            <div class="text-green-200 font-semibold mb-6">Founded in Georgetown, Guyana</div>
+            <div class="grid grid-cols-2 gap-4 text-center">
+              <div class="glass rounded-2xl p-4">
+                <div class="text-2xl font-extrabold">8</div>
+                <div class="text-green-200 text-xs mt-1">Farm Partners</div>
+              </div>
+              <div class="glass rounded-2xl p-4">
+                <div class="text-2xl font-extrabold">50+</div>
+                <div class="text-green-200 text-xs mt-1">Products</div>
+              </div>
+              <div class="glass rounded-2xl p-4">
+                <div class="text-2xl font-extrabold">500+</div>
+                <div class="text-green-200 text-xs mt-1">Happy Customers</div>
+              </div>
+              <div class="glass rounded-2xl p-4">
+                <div class="text-2xl font-extrabold">100%</div>
+                <div class="text-green-200 text-xs mt-1">Certified Organic</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="mb-20">
+      <div class="text-center mb-10 reveal">
+        <span class="inline-block bg-green-100 text-green-700 rounded-full px-4 py-1 text-sm font-semibold mb-3">Milestones</span>
+        <h2 class="text-3xl font-extrabold text-green-900">Our Journey</h2>
+      </div>
+      <div class="max-w-2xl mx-auto">
+        <div class="timeline-item reveal reveal-delay-1">
+          <div class="timeline-dot">18</div>
+          <div class="bg-white rounded-2xl shadow-sm border border-green-100 p-5 mb-0">
+            <div class="text-green-600 font-bold text-sm mb-1">2018</div>
+            <h3 class="font-bold text-green-900 mb-1">GreenLeaf Founded</h3>
+            <p class="text-gray-500 text-sm">Maya Persaud opens the first GreenLeaf Organics stall at Bourda Market, Georgetown, selling produce from her family's Demerara farm.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-2">
+          <div class="timeline-dot">19</div>
+          <div class="bg-white rounded-2xl shadow-sm border border-green-100 p-5">
+            <div class="text-green-600 font-bold text-sm mb-1">2019</div>
+            <h3 class="font-bold text-green-900 mb-1">First Farm Partnerships</h3>
+            <p class="text-gray-500 text-sm">We formalise partnerships with three farms in Berbice and Essequibo, tripling our product range and ensuring year-round supply.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-3">
+          <div class="timeline-dot">21</div>
+          <div class="bg-white rounded-2xl shadow-sm border border-green-100 p-5">
+            <div class="text-green-600 font-bold text-sm mb-1">2021</div>
+            <h3 class="font-bold text-green-900 mb-1">Delivery Service Launched</h3>
+            <p class="text-gray-500 text-sm">We move into our Regent Street shop and launch our twice-weekly home delivery service — the first organic delivery service in Georgetown.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal reveal-delay-4">
+          <div class="timeline-dot">23</div>
+          <div class="bg-white rounded-2xl shadow-sm border border-green-100 p-5">
+            <div class="text-green-600 font-bold text-sm mb-1">2023</div>
+            <h3 class="font-bold text-green-900 mb-1">Organic Certification Achieved</h3>
+            <p class="text-gray-500 text-sm">All eight of our farm partners receive full organic certification from the Guyana Organic Certification Body — a milestone we're enormously proud of.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">26</div>
+          <div class="bg-white rounded-2xl shadow-sm border border-green-100 p-5">
+            <div class="text-green-600 font-bold text-sm mb-1">2026</div>
+            <h3 class="font-bold text-green-900 mb-1">Georgetown's Top Organic Shop</h3>
+            <p class="text-gray-500 text-sm">Voted Georgetown's most trusted organic food shop by the Guyana Consumer Trust for the second consecutive year. 500+ regular customers and growing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="mb-20">
+      <div class="text-center mb-10 reveal">
+        <span class="inline-block bg-green-100 text-green-700 rounded-full px-4 py-1 text-sm font-semibold mb-3">Meet the Team</span>
+        <h2 class="text-3xl font-extrabold text-green-900">The People Behind GreenLeaf</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Maya -->
+        <div class="card-hover bg-white rounded-2xl shadow-sm border border-green-50 p-6 text-center reveal reveal-delay-1">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&auto=format&fit=crop&q=80" alt="Maya Persaud, Founder &amp; Director" loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover ring-4 ring-green-100 shadow-md">
+          <h3 class="font-bold text-green-900 text-lg">Maya Persaud</h3>
+          <div class="text-green-600 text-sm font-medium mb-3">Founder &amp; Director</div>
+          <p class="text-gray-500 text-sm leading-relaxed">Former agricultural extension officer with a passion for organic farming. Maya founded GreenLeaf to bridge Guyanese farms and Georgetown families. She personally visits every farm partner every quarter.</p>
+        </div>
+        <!-- Deon -->
+        <div class="card-hover bg-white rounded-2xl shadow-sm border border-green-50 p-6 text-center reveal reveal-delay-2">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80" alt="Deon Williams, Head of Farm Relations" loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover ring-4 ring-green-100 shadow-md">
+          <h3 class="font-bold text-green-900 text-lg">Deon Williams</h3>
+          <div class="text-green-600 text-sm font-medium mb-3">Head of Farm Relations</div>
+          <p class="text-gray-500 text-sm leading-relaxed">Deon coordinates with all eight of our partner farms, managing delivery schedules, quality checks and organic certification compliance. Raised on a family farm in Berbice.</p>
+        </div>
+        <!-- Sunita -->
+        <div class="card-hover bg-white rounded-2xl shadow-sm border border-green-50 p-6 text-center reveal reveal-delay-3">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&auto=format&fit=crop&q=80" alt="Sunita Ramlal, Customer &amp; Delivery Manager" loading="lazy" class="w-20 h-20 rounded-full mx-auto mb-4 object-cover ring-4 ring-green-100 shadow-md">
+          <h3 class="font-bold text-green-900 text-lg">Sunita Ramlal</h3>
+          <div class="text-green-600 text-sm font-medium mb-3">Customer &amp; Delivery Manager</div>
+          <p class="text-gray-500 text-sm leading-relaxed">Sunita oversees our twice-weekly delivery service and ensures every customer order is fulfilled correctly. She's the friendly voice you'll hear when you call us on Regent Street.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="mb-10">
+      <div class="text-center mb-10 reveal">
+        <span class="inline-block bg-green-100 text-green-700 rounded-full px-4 py-1 text-sm font-semibold mb-3">What We Stand For</span>
+        <h2 class="text-3xl font-extrabold text-green-900">Our Core Values</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div class="rounded-2xl p-6 reveal reveal-delay-1" style="background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);border:1px solid #bbf7d0;box-shadow:0 4px 20px rgba(34,197,94,0.1);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0);">🌎</div>
+            <div>
+              <h3 class="font-bold text-green-900 mb-2">Environmental Responsibility</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">We use 100% compostable packaging and work only with farms that practise sustainable agriculture — protecting Guyana's soil, water and biodiversity for future generations.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-6 reveal reveal-delay-2" style="background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);border:1px solid #bbf7d0;box-shadow:0 4px 20px rgba(34,197,94,0.1);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0);">🤝</div>
+            <div>
+              <h3 class="font-bold text-green-900 mb-2">Fair Farmer Partnerships</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">We pay our farm partners above market rate and guarantee advance purchase commitments so they can plan confidently — no middlemen, no exploitation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-6 reveal reveal-delay-3" style="background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);border:1px solid #bbf7d0;box-shadow:0 4px 20px rgba(34,197,94,0.1);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0);">🔬</div>
+            <div>
+              <h3 class="font-bold text-green-900 mb-2">Uncompromising Quality</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">Every batch undergoes a physical quality check before leaving the farm. We reject anything below standard — you'll never find a tired or chemically-treated product at GreenLeaf.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl p-6 reveal reveal-delay-4" style="background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);border:1px solid #bbf7d0;box-shadow:0 4px 20px rgba(34,197,94,0.1);">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0);">🏘️</div>
+            <div>
+              <h3 class="font-bold text-green-900 mb-2">Community First</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">We donate surplus produce to the Georgetown Community Kitchen each week and run quarterly organic gardening workshops open to all Georgetown residents — free of charge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="bg-green-900 text-green-100 mt-20">
+    <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3"><span class="text-2xl">🌿</span><span class="font-bold text-white text-lg">GreenLeaf Organics</span></div>
+        <p class="text-green-300 text-sm leading-relaxed">Georgetown's premier certified organic food shop. Locally sourced, freshly delivered.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-green-300">
+          <li><a href="index.html"    class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
+          <li><a href="about.html"    class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="gallery.html"  class="hover:text-white transition-colors">Gallery</a></li>
+          <li><a href="contact.html"  class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Visit Us</h4>
+        <div class="text-sm text-green-300 space-y-1">
+          <p>42 Regent Street, Georgetown</p>
+          <p>Tel: +592 225-0001</p>
+          <p>Mon&ndash;Sat: 7am &ndash; 6pm</p>
+          <p class="mt-2">🚚 Delivery: Tue &amp; Fri</p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-green-800 text-center py-4 text-sm text-green-400">
+      &copy; 2026 GreenLeaf Organics | F3T2 12 &mdash; Computing: Authoring a Website | 252IFCBR0596
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery — GreenLeaf Organics</title>
+  <meta name="description" content="Browse the GreenLeaf Organics photo gallery — farms, produce, shop and community events across Guyana.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:{50:'#f0fdf4',100:'#dcfce7',200:'#bbf7d0',300:'#86efac',400:'#4ade80',500:'#22c55e',600:'#16a34a',700:'#15803d',800:'#166534',900:'#14532d'},
+            leaf:'#2D7D46',dark:'#1a2e1a',
+          },
+          fontFamily:{sans:['Inter','sans-serif']},
+          borderRadius:{'4xl':'2rem','5xl':'2.5rem'},
+          boxShadow:{'glow':'0 0 20px rgba(45,125,70,0.3)'},
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="font-sans bg-white text-gray-900 antialiased">
+
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-green-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <span class="text-2xl">🌿</span>
+        <div>
+          <div class="font-bold text-green-800 text-lg leading-none">GreenLeaf Organics</div>
+          <div class="text-xs text-green-600 tracking-widest uppercase">Fresh. Natural. Local.</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex gap-1">
+        <a href="index.html"    class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">Home</a>
+        <a href="products.html" class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">Products</a>
+        <a href="about.html"    class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">About</a>
+        <a href="gallery.html"  class="bg-green-600 text-white rounded-full px-4 py-2 text-sm font-medium">Gallery</a>
+        <a href="contact.html"  class="text-green-800 hover:bg-green-50 rounded-full px-4 py-2 text-sm font-medium transition-colors">Contact</a>
+      </nav>
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden p-2 rounded-xl text-green-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden px-4 pb-3 border-t border-green-100 flex flex-col gap-1 pt-2">
+      <a href="index.html"    class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">Home</a>
+      <a href="products.html" class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">Products</a>
+      <a href="about.html"    class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">About</a>
+      <a href="gallery.html"  class="block bg-green-600 text-white rounded-xl px-4 py-2 text-sm font-medium">Gallery</a>
+      <a href="contact.html"  class="block text-green-800 hover:bg-green-50 rounded-xl px-4 py-2 text-sm font-medium">Contact</a>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="hero-gradient-sm py-16 text-white text-center relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 60% 40%,white 1px,transparent 1px);background-size:24px 24px;"></div>
+    <div class="relative z-10 max-w-3xl mx-auto px-4">
+      <div class="text-5xl mb-3">📸</div>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-3">Our Gallery</h1>
+      <p class="text-green-100 text-lg">Life on the farm, vibrant produce and the spirit of GreenLeaf — captured in pictures.</p>
+    </div>
+  </section>
+
+  <main class="max-w-6xl mx-auto px-4 py-14">
+
+    <div class="text-center mb-10 reveal">
+      <span class="inline-block bg-green-100 text-green-700 rounded-full px-4 py-1 text-sm font-semibold mb-3">Farms, Produce &amp; People</span>
+      <h2 class="text-3xl font-extrabold text-green-900">A Glimpse Into Our World</h2>
+      <p class="text-gray-500 mt-2 max-w-xl mx-auto">From sunrise harvests on the East Coast to our lively Regent Street shop floor.</p>
+    </div>
+
+    <!-- Masonry CSS columns — real Unsplash photos (free, open licence) -->
+    <div class="columns-2 md:columns-3 gap-4 reveal">
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=600&auto=format&fit=crop" alt="Fresh colourful produce at a farmers market" loading="lazy" class="w-full object-cover" style="height:280px;">
+        <div class="overlay">🥬 Morning harvest — Demerara Farm</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1561136594-7f68413baa99?w=600&auto=format&fit=crop" alt="Ripe heritage tomatoes freshly harvested" loading="lazy" class="w-full object-cover" style="height:200px;">
+        <div class="overlay">🍅 Heritage tomatoes — Berbice</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?w=600&auto=format&fit=crop" alt="Fresh herbs and greens from an organic garden" loading="lazy" class="w-full object-cover" style="height:300px;">
+        <div class="overlay">🌿 Herb garden — West Coast Farm</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=600&auto=format&fit=crop" alt="Free-range eggs in a basket from organic hens" loading="lazy" class="w-full object-cover" style="height:200px;">
+        <div class="overlay">🥚 Free-range hens — West Coast Farm</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&auto=format&fit=crop" alt="Vibrant organic vegetables on a market stall" loading="lazy" class="w-full object-cover" style="height:260px;">
+        <div class="overlay">🥦 Organic veg — East Coast Demerara</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=600&auto=format&fit=crop" alt="Tropical fruits including pineapples and mangoes" loading="lazy" class="w-full object-cover" style="height:215px;">
+        <div class="overlay">🍍 Pineapple fields — Essequibo</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=600&auto=format&fit=crop" alt="Busy organic farmers market with fresh produce" loading="lazy" class="w-full object-cover" style="height:220px;">
+        <div class="overlay">🏪 Our Regent Street shop floor</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=600&auto=format&fit=crop" alt="Organic brown rice grains and stalks" loading="lazy" class="w-full object-cover" style="height:270px;">
+        <div class="overlay">🌾 Brown rice harvest — Rupununi</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=600&auto=format&fit=crop" alt="Fresh green vegetables including spinach and kale" loading="lazy" class="w-full object-cover" style="height:200px;">
+        <div class="overlay">🥬 Leafy greens — Corentyne</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?w=600&auto=format&fit=crop" alt="Fresh ripe mangoes on the tree" loading="lazy" class="w-full object-cover" style="height:260px;">
+        <div class="overlay">🥭 Julie mango grove — Berbice</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&auto=format&fit=crop" alt="Sunrise over an organic farm field in Guyana" loading="lazy" class="w-full object-cover" style="height:215px;">
+        <div class="overlay">🌅 Sunrise — East Demerara Farm</div>
+      </div>
+
+      <div class="gallery-item mb-4 break-inside-avoid rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1550828520-4cb496926fc9?w=600&auto=format&fit=crop" alt="Organic farm with rows of growing crops" loading="lazy" class="w-full object-cover" style="height:280px;">
+        <div class="overlay">🌱 Seedling nursery — Demerara Farm</div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-14 text-center reveal">
+      <div class="inline-block bg-green-50 rounded-3xl px-8 py-8 border border-green-100">
+        <div class="text-4xl mb-3">📷</div>
+        <h3 class="font-bold text-green-900 text-xl mb-2">Visit Us in Person</h3>
+        <p class="text-gray-500 text-sm mb-5 max-w-sm mx-auto">The photos are great, but tasting the freshness is even better. Pop into our Regent Street shop, Mon–Sat 7am–6pm.</p>
+        <a href="contact.html" class="inline-block bg-green-600 hover:bg-green-700 text-white rounded-full px-7 py-3 font-bold transition-all duration-300 hover:-translate-y-1">
+          Get Directions
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-green-900 text-green-100 mt-20">
+    <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <div class="flex items-center gap-2 mb-3"><span class="text-2xl">🌿</span><span class="font-bold text-white text-lg">GreenLeaf Organics</span></div>
+        <p class="text-green-300 text-sm leading-relaxed">Georgetown's premier certified organic food shop. Locally sourced, freshly delivered.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-green-300">
+          <li><a href="index.html"    class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="products.html" class="hover:text-white transition-colors">Products</a></li>
+          <li><a href="about.html"    class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="gallery.html"  class="hover:text-white transition-colors">Gallery</a></li>
+          <li><a href="contact.html"  class="hover:text-white transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-white mb-3">Visit Us</h4>
+        <div class="text-sm text-green-300 space-y-1">
+          <p>42 Regent Street, Georgetown</p>
+          <p>Tel: +592 225-0001</p>
+          <p>Mon&ndash;Sat: 7am &ndash; 6pm</p>
+          <p class="mt-2">🚚 Delivery: Tue &amp; Fri</p>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-green-800 text-center py-4 text-sm text-green-400">
+      &copy; 2026 GreenLeaf Organics | F3T2 12 &mdash; Computing: Authoring a Website | 252IFCBR0596
+    </div>
+  </footer>
+
+  <script>
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.06 });
+    revealEls.forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
